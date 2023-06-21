@@ -62,6 +62,18 @@ public class Conta {
 			System.out.println("Saque realizado com sucesso!");
 		} else {
 			System.out.println("Saque não realizado!");
+		}	
+	}
+	
+	public void transferir (Conta contaParaDeposito, Double valor) {
+		if (valor >0 && this.getSaldo() >= valor) {
+			setSaldo(getSaldo() - valor);
+			
+			contaParaDeposito.saldo = contaParaDeposito.getSaldo() + valor;
+			System.out.println("Transferencia realizada com sucesso");
+		}else {
+			System.out.println("Transferencia não realizada");
 		}
 	}
+	
 }
